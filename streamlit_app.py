@@ -51,8 +51,7 @@ streamlit.write('The user entered ', fruit_choice)
 # import snowflake.connector 
 
 # write your own comment - what does this do?
-
-#streamlit.stop()
+streamlit.stop()
 streamlit.header("The fruit load list contains:")
 #snowflake related function
 def get_fruit_load_list():
@@ -60,7 +59,7 @@ def get_fruit_load_list():
   my_cur.execute("SELECT * FROM fruit_load_list")
   return my_cur.fetchall()
 
-#ad a button to load the fruit
+#add a button to load the fruit
 if streamlit.button('Get Fruit Load List'):
   my_cnx = snowflake.connector.connect(**streamlit.secrets["snowflake"])
   my_data_rows = get_fruit_load_list()
@@ -69,5 +68,5 @@ if streamlit.button('Get Fruit Load List'):
 #my_cur.execute("insert into fruit_load_list values ('from streamlit')")
 
 
-
+#streamlit.stop()
 
